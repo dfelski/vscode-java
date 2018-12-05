@@ -12,11 +12,11 @@ RUN add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vs
 # update new added repository
 RUN find /etc/apt/sources.list.d -type f -name '*.list' -exec apt update -o Dir::Etc::sourcelist="{}" ';'
 
-# add Zulu-OpenJDK 11 package
+# install Zulu-OpenJDK 11
 RUN wget -q https://cdn.azul.com/zulu/bin/zulu11.2.3-jdk11.0.1-linux_amd64.deb
 RUN apt install -y ./zulu11.2.3-jdk11.0.1-linux_amd64.deb
 
-# install Visual Studio Code, Java OpenJDK and Maven
+# install Visual Studio Code and Maven
 RUN apt install -y code maven
 
 CMD ["/usr/share/code/code"]
