@@ -3,7 +3,7 @@ MAINTAINER Darius Felski
 LABEL Description="Docker image for Visual Studio Code with preinstalled OpenJDK 11" Version="0.2.0"
 
 # install Zulu-OpenJDK 11
-RUN && apt update \
+RUN apt update \
   && apt install -y wget git unzip \
   \
   && wget -q https://cdn.azul.com/zulu/bin/zulu11.29.3-ca-jdk11.0.2-linux_amd64.deb \
