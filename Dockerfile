@@ -11,6 +11,5 @@ RUN apt update \
   \
   && wget -q https://services.gradle.org/distributions/gradle-5.2.1-bin.zip -O /tmp/gradle.zip \
   && mkdir /opt/gradle \
-  && unzip -d /opt/gradle /tmp/gradle.zip
-
-ENV PATH="/opt/gradle/gradle-5.2.1/bin:${PATH}"
+  && unzip -d /opt/gradle /tmp/gradle.zip \
+  && echo 'PATH=$PATH:/opt/gradle/gradle-5.2.1/bin' >> /etc/profile.d/gradle_path.sh
